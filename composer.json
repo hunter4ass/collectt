@@ -1,8 +1,8 @@
 {
-    "name": "egor-ilchuk/collect",
-    "description": "Module for working with arrays",
-    "type": "library",
-    "license": "MIT",
+     "name": "hunter4ass/collectt",
+  "description": "Simple PHP Collection package",
+  "type": "library",
+  "license": "MIT",
     "authors": [
       {
         "name": "hunter4ass",
