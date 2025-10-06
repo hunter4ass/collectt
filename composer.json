@@ -1,0 +1,15 @@
+{
+    "name": "php-task-4/collect",
+    "autoload": {
+        "psr-4": {
+            "PhpTask4\\Collect\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hunter4ass",
+            "email": "egorilicu@gmail.com"
+        }
+    ],
+    "require": {}
+}
