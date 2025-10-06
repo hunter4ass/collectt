@@ -15,15 +15,36 @@ class Collection
         return $this->items;
     }
 
+    public function only(array $keys): self
+    {
+        $filtered = array_intersect_key($this->items, array_flip($keys));
+        return new static($filtered);
+    }
+
     public function except(array $keys): self
     {
         $filtered = array_diff_key($this->items, array_flip($keys));
         return new static($filtered);
     }
 
-    public function only(array $keys): self
+    public function add(string $key, $value): self
     {
-        $filtered = array_intersect_key($this->items, array_flip($keys));
-        return new static($filtered);
+        $this->items[$key] = $value;
+        return $this;
+    }
+
+    public function filter(callable $callback): self
+    {
+        return new static(array_filter($this->items, $callback, ARRAY_FILTER_USE_BOTH));
+    }
+
+    public function map(callable $callback): self
+    {
+        return new static(array_map($callback, $this->items));
+    }
+
+    public function count(): int
+    {
+        return count($this->items);
     }
 }

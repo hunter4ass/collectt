@@ -1,15 +1,25 @@
 {
-    "name": "php-task-4/collect",
-    "autoload": {
-        "psr-4": {
-            "PhpTask4\\Collect\\": "src/"
-        }
-    },
+    "name": "egor-ilchuk/collect",
+    "description": "Module for working with arrays",
+    "type": "library",
+    "license": "MIT",
     "authors": [
-        {
-            "name": "hunter4ass",
-            "email": "egorilicu@gmail.com"
-        }
+      {
+        "name": "hunter4ass",
+        "email": "egorilicu@gmail.com"
+      }
     ],
-    "require": {}
-}
+    "minimum-stability": "dev",
+    "require": {
+      "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "Collect\\": "src/"
+      },
+      "files": [
+        "src/helpers.php"
+      ]
+    }
+  }
+  
