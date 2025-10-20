@@ -47,4 +47,30 @@ class Collection
     {
         return count($this->items);
     }
+
+    public function reduce(callable $callback, $initial = null)
+    {
+        return array_reduce($this->items, $callback, $initial);
+    }
+
+    public function merge(array $items): self
+    {
+        return new static(array_merge($this->items, $items));
+    }
+
+    public function pluck(string $key): array
+    {
+        return array_column($this->items, $key);
+    }
+
+    public function sort(callable $callback = null): self
+    {
+        $items = $this->items;
+        if ($callback) {
+            uasort($items, $callback);
+        } else {
+            asort($items);
+        }
+        return new static($items);
+    }
 }
